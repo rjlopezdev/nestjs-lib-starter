@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Generate package
 
 echo '📦  Packaging the Schematics...\n'
@@ -31,8 +33,10 @@ for file in "${files_to_copy[@]}"; do
   echo 🔹  $file copied  ✅
 done
 
+# /!\ : YOU CAN REMOVE THIS AFTER TEMPLATE SETUP COMPLETED (See CONFIGURE_TEMPLATE.md)
 npm i -g replace-in-file
-replace-in-file {{LIBRARY_NAME}} "Nest Library Starter" dist/*
-replace-in-file {{LIBRARY_NPM}}  nestjs-lib-starter dist/*
-replace-in-file {{AUTHOR_NAME}}  super-cat  dist/*
-replace-in-file {{AUTHOR_EMAIL}} supercat@mail.com dist/*
+replace-in-file {{LIBRARY_NAME}}    "Nest Library Starter" dist/*
+replace-in-file {{LIBRARY_NPM}}     nestjs-lib-starter     dist/*
+replace-in-file {{AUTHOR_NAME}}     super-cat              dist/*
+replace-in-file {{AUTHOR_EMAIL}}    supercat@mail.com      dist/*
+replace-in-file {{REPOSITORY_NAME}} nestjs-lib-starter     dist/*
