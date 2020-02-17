@@ -1,0 +1,24 @@
+name: Bump version
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  bump:
+    # if: "!contains(github.event.head_commit.message, 'bump')"
+    runs-on: ubuntu-latest
+    container:
+      image: node:10.16-jessie
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: |
+        npm i -g commitizen
+        npm install
+    - name: Create bump
+      run: cz bump --yes
+    - name: Push changes
+      uses: Woile/github-push-action@master
