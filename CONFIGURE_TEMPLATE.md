@@ -4,11 +4,11 @@
 
 ```bash
 npm i -g replace-in-file
-replace-in-file {{LIBRARY_NAME}}    <library_name> *
-replace-in-file {{LIBRARY_NPM}}     <npm_registry> *
-replace-in-file {{AUTHOR_NAME}}     <author_name>  *
-replace-in-file {{AUTHOR_EMAIL}}    <author_email> *
-replace-in-file {{REPOSITORY_NAME}} <repository> *
+replace-in-file /{{LIBRARY_NAME}}/g    <library_name> * --isRegex
+replace-in-file /{{LIBRARY_NPM}}/g     <npm_registry> * --isRegex
+replace-in-file /{{AUTHOR_NAME}}/g     <author_name>  * --isRegex
+replace-in-file /{{AUTHOR_EMAIL}}/g    <author_email> * --isRegex
+replace-in-file /{{REPOSITORY_NAME}}/g <repository>   * --isRegex
 ```
 | Name | Description |
 |:---:|---|
