@@ -1,0 +1,13 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "nest-add": {
+      "description": "A blank schematic.",
+      "factory": "./nest-add/index#nestAdd"
+    },
+    "demo": {
+      "description": "A demo schematic.",
+      "factory": "./demo/index#demoSchematic"
+    }
+  }
+}

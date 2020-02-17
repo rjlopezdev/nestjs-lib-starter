@@ -1,0 +1,56 @@
+{
+  "name": "nestjs-lib-starter",
+  "version": "1.0.0",
+  "description": "A Project Template for Schematics",
+  "license": "MIT",
+  "keywords": [
+    "schematics",
+    "template"
+  ],
+  "author": {
+    "name": "{{AUTHOR_NAME}}",
+    "email": "{{AUTHOR_EMAIL}}"
+  },
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "npm run build:lib && npm run build:schematics && ./tools/package.sh",
+    "build:lib": "npx tsc -p tsconfig.json",
+    "build:schematics": "npx tsc -p tsconfig.schematics.json",
+    "lint": "npm run lint:lib && npm run lint:schematics",
+    "lint:lib": "npx eslint 'src/**'",
+    "lint:schematics": "npx eslint 'schematics/**'",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "@angular-devkit/core": "^9.0.2",
+    "@angular-devkit/schematics": "^9.0.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@types/jest": "^25.1.2",
+    "@types/node": "^13.7.1",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "husky": "^4.2.3",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.2.0",
+    "typescript": "^3.7.5"
+  }
+}
