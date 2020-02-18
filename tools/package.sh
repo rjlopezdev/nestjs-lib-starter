@@ -26,6 +26,7 @@ files_to_copy=(
   README.md
   LICENSE
   CONTRIBUTING.md
+  CHANGELOG.md
 )
 
 for file in "${files_to_copy[@]}"; do

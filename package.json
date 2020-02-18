@@ -1,6 +1,6 @@
 {
   "name": "nestjs-lib-starter",
-  "version": "1.1.0",
+  "version": "0.0.0-development",
   "description": "A Project Template for Schematics",
   "license": "MIT",
   "keywords": [
@@ -20,7 +20,7 @@
     "lint:lib": "npx eslint 'src/**'",
     "lint:schematics": "npx eslint 'schematics/**'",
     "test": "jest",
-    "release": "standard-version"
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "@angular-devkit/core": "^9.0.2",
-    "@angular-devkit/schematics": "^9.0.2"
+    "@angular-devkit/schematics": "^9.0.2",
+    "@nestjs/common": "^6.11.7",
+    "@nestjs/core": "^6.11.7"
   },
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
@@ -46,12 +48,16 @@
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
     "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.1.0",
     "eslint": "^6.8.0",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "prettier": "^1.19.1",
+    "semantic-release": "^17.0.4",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rjlopezdev/nestjs-lib-starter.git"
   }
 }
