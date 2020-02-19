@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.2...v1.4.0) (2020-02-19)
+
+
+### Features
+
+* add `catType` prompt ([3521200](https://github.com/rjlopezdev/nestjs-lib-starter/commit/35212004fd7b72bcaae553beb07aeeab78844bc5))
+
 ## [1.3.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.1...v1.3.2) (2020-02-19)
 
 
