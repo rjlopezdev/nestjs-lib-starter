@@ -1,9 +1,9 @@
 {
   "properties": {
-    "name": {
+    "catType": {
       "type": "string",
       "minLength": 1,
-      "default": "demo"
+      "default": "Default"
     }
   }
 }

@@ -28,10 +28,11 @@
 
 An exhaustive description of the library.
 
-# Summary
+# :notebook: Summary
 
 * [Installation]()
 * [Setup]()
+* [Schematics]()
 * [Usage]()
 
 # Installation
@@ -49,6 +50,22 @@ npm install --save nestjs-library-starter
 # Setup
 
 Explain your library setup.
+
+# Schematics
+
+Invoke Schematics using:
+
+```
+nest g nestjs-library-starter:<schematic> [params]
+```
+
+## demo
+
+> Prints a cute cat.
+
+| Parameter | Type | Default | Description |
+| --- | --- | --- | --- |
+| __catType__ | _string_ | Default | Type of cat to print.
 
 # Usage
 
