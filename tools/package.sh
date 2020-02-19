@@ -2,7 +2,7 @@
 
 # Generate package
 
-echo '📦  Packaging the Schematics...\n'
+echo '📦  Packaging the Schematics...'
 
 # Copy <Collection> Schema
 cp schematics/collection.json dist/schematics/collection.json
