@@ -1,24 +1,24 @@
+> :bulb: See [CONFIGURE_TEMPLATE.md](./CONFIGURE_TEMPLATE) to configure this template. Then, remove the file and this advise.
+
 <p align="center">
-  <img src="https://d33wubrfki0l68.cloudfront.net/49c2be6f2607b5c12dd27f8ecc8521723447975d/f05c5/logo-small.cbbeba89.svg" alt="{{LIBRARY_NAME}}" width="200" height="200">
+  <img src="https://d33wubrfki0l68.cloudfront.net/49c2be6f2607b5c12dd27f8ecc8521723447975d/f05c5/logo-small.cbbeba89.svg" alt="Nest Library Starter" width="200" height="200">
 </p>
 
-<h1 align="center"> {{LIBRARY_NAME}} </h1>
+<h1 align="center"> Nest Library Starter </h1>
 
 <p align="center">
   Minimal library description.
   <br>
   <br>
-  <img src="https://github.com/{{AUTHOR_NAME}}/{{REPOSITORY_NAME}}/workflows/Build%20Library%20and%20Schematics/badge.svg">
+  <img src="https://github.com/rjlopezdev/nestjs-lib-starter/workflows/Build%20Library%20and%20Schematics/badge.svg">
   <br>
   <br>
-  <img src="https://img.shields.io/badge/maintainer-{{AUTHOR_NAME}}-orange.svg?link=https://github.com/{{AUTHOR_NAME}}">
-  <br>
-  <a href="https://codecov.io/gh/{{AUTHOR_NAME}}/{{LIBRARY_NPM}}">
-  <img src="https://codecov.io/gh/{{AUTHOR_NAME}}/{{LIBRARY_NPM}}/branch/master/graph/badge.svg"/>
-  </a>
-  <img src="https://badge.fury.io/js/{{LIBRARY_NPM}}.svg">
+  <img src="https://badge.fury.io/js/nestjs-library-starter.svg">
+  <img src="https://img.shields.io/badge/maintainer-rjlopezdev-orange.svg?link=https://github.com/rjlopezdev">
   <img src="https://img.shields.io/badge/license-MIT-green.svg">
+  <br>
   <img src="https://img.shields.io/badge/nest%20add-compatible-green.svg">
+  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
   <br>
   <br>
   <a href="CONTRIBUTING.md"> Contributing </a>
@@ -39,11 +39,11 @@ An exhaustive description of the library.
 * :cat2: Using Nest CLI:
 
 ```
-nest add {{LIBRARY_NPM}}
+nest add nestjs-library-starter
 ```
 * :package: Using Package Manager: 
 ```
-npm install --save {{LIBRARY_NPM}}
+npm install --save nestjs-library-starter
 ```
 
 # Setup
