@@ -1,4 +1,8 @@
 {
+  "$schema": "http://json-schema.org/schema",
+  "id": "SchematicsAdd",
+  "title": "Add Schema",
+  "type": "object",
   "properties": {
     "name": {
       "type": "string",

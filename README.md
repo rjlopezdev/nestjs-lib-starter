@@ -56,7 +56,7 @@ Explain your library setup.
 Invoke Schematics using:
 
 ```
-nest g nestjs-library-starter:<schematic> [params]
+nest g <schematic> [params] --collection nestjs-library-starter
 ```
 
 ## demo
