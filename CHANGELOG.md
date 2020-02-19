@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.4.0...v1.5.0) (2020-02-19)
+
+
+### Features
+
+* export `LibraryNameModule` ([41e61d0](https://github.com/rjlopezdev/nestjs-lib-starter/commit/41e61d05c90cf7345d753adb5033dd3de3f50904))
+
 # [1.4.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.2...v1.4.0) (2020-02-19)
 
 
