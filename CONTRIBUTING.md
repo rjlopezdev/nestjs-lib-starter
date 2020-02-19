@@ -12,4 +12,5 @@ Your commits should match with Conventional Commits standard.
 
 | Scope | Description |
 | --- | --- |
-| <__scope__> | Description of <__scope__>
+| <__scope__> | Description of <__scope__> |
+| ... | ... |

@@ -30,10 +30,10 @@ An exhaustive description of the library.
 
 # :notebook: Summary
 
-* [Installation]()
-* [Setup]()
-* [Schematics]()
-* [Usage]()
+* [Installation](#installation)
+* [Setup](#setup)
+* [Schematics](#schematics)
+* [Usage](#usage)
 
 # Installation
 
