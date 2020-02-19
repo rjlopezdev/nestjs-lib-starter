@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.5.0...v1.5.1) (2020-02-19)
+
+
+### Bug Fixes
+
+* export module ([d830ed7](https://github.com/rjlopezdev/nestjs-lib-starter/commit/d830ed74ebf8e6d30f6c399b338d4e28f952fa8b))
+
 # [1.5.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.4.0...v1.5.0) (2020-02-19)
 
 
