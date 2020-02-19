@@ -3,11 +3,13 @@
   "schematics": {
     "nest-add": {
       "description": "A blank schematic.",
-      "factory": "./nest-add/index#nestAdd"
+      "factory": "./nest-add/index#nestAdd",
+      "schema": "./nest-add/schema.json"
     },
     "demo": {
       "description": "A demo schematic.",
-      "factory": "./demo/index#demoSchematic"
+      "factory": "./demo/index#demoSchematic",
+      "schema": "./demo/schema.json"
     }
   }
 }
