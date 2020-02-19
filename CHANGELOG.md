@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.0...v1.3.1) (2020-02-19)
+
+
+### Bug Fixes
+
+* improve docs & schematic feedback ([27fcde8](https://github.com/rjlopezdev/nestjs-lib-starter/commit/27fcde832e733374dcc32314e5066056e4cb0776))
+
 # [1.3.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.2.0...v1.3.0) (2020-02-19)
 
 
