@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.1...v1.3.2) (2020-02-19)
+
+
+### Bug Fixes
+
+* add missing `schema` property to collection ([835fdf5](https://github.com/rjlopezdev/nestjs-lib-starter/commit/835fdf5f94749d5bbc79b10702e9c47c99621772))
+
 ## [1.3.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.3.0...v1.3.1) (2020-02-19)
 
 
