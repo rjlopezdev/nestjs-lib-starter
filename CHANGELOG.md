@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.6.0...v1.6.1) (2020-02-20)
+
+
+### Bug Fixes
+
+* add missing typings ([52aaed3](https://github.com/rjlopezdev/nestjs-lib-starter/commit/52aaed39721d6b1296bb847d657d7feb38f54b8c))
+
 # [1.6.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.5.1...v1.6.0) (2020-02-20)
 
 
