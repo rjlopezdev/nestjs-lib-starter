@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.5.1...v1.6.0) (2020-02-20)
+
+
+### Features
+
+* add example module & improve docs ([d889014](https://github.com/rjlopezdev/nestjs-lib-starter/commit/d8890146092f31789c2e8e47877d9835c6d12cd2))
+
 ## [1.5.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.5.0...v1.5.1) (2020-02-19)
 
 
