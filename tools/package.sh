@@ -6,19 +6,19 @@ echo '📦  Packaging the Schematics...'
 
 # Copy <Collection> Schema
 cp schematics/collection.json dist/schematics/collection.json
-echo '🔹  <Collection> copied  ✅'
+echo '🔹  <Collection> schema copied ✅'
 
-# Copy Schematic <Schemas>
+# Copy <Schematic> Schemas
 for file in schematics/*/schema.json; do
   cp ${file} dist/${file}
 done
-echo '🔹  <Schemas> copied  ✅'
+echo '🔹  <Schematics> schemas copied ✅'
 
 # Copy Schematic <Templates>
 for dir in schematics/*/; do
   cp -r ${dir}files dist/${dir}
 done
-echo '🔹  <Template> files copied  ✅'
+echo '🔹  <Template> files copied ✅'
 
 # Files to copy to dist folder
 files_to_copy=(
@@ -33,3 +33,5 @@ for file in "${files_to_copy[@]}"; do
   cp $file dist
   echo 🔹  $file copied  ✅
 done
+
+echo '📦📦📦 Packaged successfully! 📦📦📦'

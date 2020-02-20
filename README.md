@@ -32,10 +32,11 @@ An exhaustive description of the library.
 
 * [Installation](#installation)
 * [Setup](#setup)
-* [Schematics](#schematics)
 * [Usage](#usage)
+  * [LibraryNameService](#librarynameservice)
+* [Schematics](#schematics)
 
-# Installation
+# :package: Installation
 
 * :cat2: Using Nest CLI:
 
@@ -47,11 +48,48 @@ nest add nestjs-library-starter
 npm install --save nestjs-library-starter
 ```
 
-# Setup
+# :wrench: Setup
 
 Explain your library setup.
 
-# Schematics
+```typescript
+import { Module } from '@nestjs/common';
+import { LibraryNameModule, LibraryNameConfig } from 'nestjs-library-starter';
+
+const CONFIG: LibraryNameConfig = {
+  value: 'Awesome!'
+}
+
+@Module({
+  imports: [
+    ...
+    LibraryNameModule.register(CONFIG)
+  ],
+  controllers: [ ... ],
+  providers: [ ... ],
+})
+export class AppModule {}
+```
+
+## :capital_abcd: Config
+
+| Value | Type | Default | Description |
+| --- | --- | --- | --- |
+| value | __string__ | `<DEFAULT>` | A powerful value |
+
+# :books: Usage
+
+Explain your library usage.
+
+## LibraryNameService
+
+A service with an awesome & helpul functionallity.
+
+| Method | Signature | Description |
+| --- | --- | --- |
+printConfig | __config__: `LibraryNameConfig` | Prints a provided _configuration_ |
+
+# :art: Schematics
 
 Invoke Schematics using:
 
@@ -66,7 +104,3 @@ nest g <schematic> [params] --collection nestjs-library-starter
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | __catType__ | _string_ | Default | Type of cat to print.
-
-# Usage
-
-Explain your library usage.
