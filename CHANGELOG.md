@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.8.0...v1.8.1) (2020-02-21)
+
+
+### Bug Fixes
+
+* improve docs coverage ([2118d4e](https://github.com/rjlopezdev/nestjs-lib-starter/commit/2118d4ec6de55fb87129833cad6a0eb77b77372c))
+
 # [1.8.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.3...v1.8.0) (2020-02-21)
 
 
