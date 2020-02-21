@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.3...v1.8.0) (2020-02-21)
+
+
+### Features
+
+* add emoji replacement for compodoc build ([5384c36](https://github.com/rjlopezdev/nestjs-lib-starter/commit/5384c3644b2cfa1fc8d5b4ed38b30906c28d81da))
+
 ## [1.7.3](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.2...v1.7.3) (2020-02-21)
 
 
