@@ -26,6 +26,8 @@
   <a href="LICENSE"> License </a>
 </p>
 
+> :books: [See complete documentation](https://rjlopezdev.github.io/nestjs-lib-starter/)
+
 An exhaustive description of the library.
 
 # :notebook: Summary

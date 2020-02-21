@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Extra file",
+    "file": "extra-file.md"
+  },
+  {
+    "title": "Extra section",
+    "file": "extra-file.md",
+    "children": [
+      {
+        "title": "Extra file",
+        "file": "extra-section/extra-file.md"
+      }
+    ]
+  }
+]

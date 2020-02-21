@@ -19,11 +19,13 @@
     "build": "npm run build:lib && npm run build:schematics && ./tools/package.sh",
     "build:lib": "npx tsc -p tsconfig.json",
     "build:schematics": "npx tsc -p tsconfig.schematics.json",
+    "build:docs": "npx compodoc -p tsconfig.json",
     "lint": "npm run lint:lib && npm run lint:schematics",
     "lint:lib": "npx eslint 'src/**'",
     "lint:schematics": "npx eslint 'schematics/**'",
     "test": "jest",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "serve:docs": "npx compodoc -p tsconfig.json --serve"
   },
   "husky": {
     "hooks": {
@@ -46,6 +48,7 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@compodoc/compodoc": "^1.1.11",
     "@semantic-release/changelog": "^5.0.0",
     "@semantic-release/git": "^9.0.0",
     "@types/jest": "^25.1.2",
