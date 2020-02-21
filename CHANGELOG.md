@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.9.0...v1.9.1) (2020-02-21)
+
+
+### Bug Fixes
+
+* remove CONFIGURE_TEMPLATE.md ([4ef8140](https://github.com/rjlopezdev/nestjs-lib-starter/commit/4ef814077fe987fda3b2da4d918757371aaeaa7b))
+
 # [1.9.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.8.1...v1.9.0) (2020-02-21)
 
 
