@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.8.1...v1.9.0) (2020-02-21)
+
+
+### Features
+
+* add codecov integration ([facfe19](https://github.com/rjlopezdev/nestjs-lib-starter/commit/facfe19a109fca9f0c5907da0bcef659098fe20b))
+
 ## [1.8.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.8.0...v1.8.1) (2020-02-21)
 
 
