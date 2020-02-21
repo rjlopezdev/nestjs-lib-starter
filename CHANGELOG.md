@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.1...v1.7.2) (2020-02-21)
+
+
+### Bug Fixes
+
+* use correct deploy key ([f48a4ee](https://github.com/rjlopezdev/nestjs-lib-starter/commit/f48a4eea4c0ae46a48a41f57fa1c9317c461bb1b))
+
 ## [1.7.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.0...v1.7.1) (2020-02-21)
 
 
