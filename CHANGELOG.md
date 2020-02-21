@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.2...v1.7.3) (2020-02-21)
+
+
+### Bug Fixes
+
+* use new gh-pages action ([f799197](https://github.com/rjlopezdev/nestjs-lib-starter/commit/f799197def300003aab6908ad7e4710d315e3b75))
+
 ## [1.7.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.7.1...v1.7.2) (2020-02-21)
 
 
