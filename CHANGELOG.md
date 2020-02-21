@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.6.1...v1.7.0) (2020-02-21)
+
+
+### Features
+
+* add compodoc support & gh-pages action ([72adb5b](https://github.com/rjlopezdev/nestjs-lib-starter/commit/72adb5b05b0fbf484436de8ab4eb7bfdbaf5df82))
+
 ## [1.6.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.6.0...v1.6.1) (2020-02-20)
 
 
