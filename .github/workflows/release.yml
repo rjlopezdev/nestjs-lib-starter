@@ -18,6 +18,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+      - name: Test
+        run: npm test
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
@@ -32,3 +34,8 @@ jobs:
           build_dir: docs/dist
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      - name: Upload coverage to Codecov  
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true

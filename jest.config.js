@@ -4,4 +4,10 @@
 module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'node',
+  collectCoverage: true,
+  moduleFileExtensions: ['ts', 'js'],
+  collectCoverageFrom: [
+    "schematics/**",
+    "src/**",
+  ]
 };

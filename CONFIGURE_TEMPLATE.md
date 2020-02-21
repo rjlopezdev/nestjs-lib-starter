@@ -27,4 +27,4 @@ In order to configure successfully this template for CI/CD carry out the followi
 ## Secrets:
 * Create [NPM_TOKEN](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-authentication-tokens)
 * Create [GH_TOKEN](https://help.github.com/es/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets)
-* Create []()
+* Create [CODECOV_TOKEN](https://codecov.io/gh)
