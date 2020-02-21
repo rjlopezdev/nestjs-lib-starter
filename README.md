@@ -41,10 +41,10 @@ An exhaustive description of the library.
 # :package: Installation
 
 * :cat2: Using Nest CLI:
-
 ```
 nest add nestjs-library-starter
 ```
+
 * :package: Using Package Manager: 
 ```
 npm install --save nestjs-library-starter
@@ -73,7 +73,7 @@ const CONFIG: LibraryNameConfig = {
 export class AppModule {}
 ```
 
-## :capital_abcd: Config
+## :control_knobs: Config
 
 | Value | Type | Default | Description |
 | --- | --- | --- | --- |

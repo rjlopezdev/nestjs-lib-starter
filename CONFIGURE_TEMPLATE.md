@@ -20,10 +20,11 @@ replace-in-file /nestjs-library-starter/g <repository>   * --isRegex
 
 ## | :warning: :+1: __Remove this Advise when you do it!!!__
 
-# 📦🚀 CI/CD Configuration 
+# :package: :rocket: CI/CD Configuration
 
 In order to configure successfully this template for CI/CD carry out the following steps:
 
 ## Secrets:
 * Create [NPM_TOKEN](https://docs.npmjs.com/creating-and-viewing-authentication-tokens#creating-authentication-tokens)
 * Create [GH_TOKEN](https://help.github.com/es/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets#creating-encrypted-secrets)
+* Create []()
