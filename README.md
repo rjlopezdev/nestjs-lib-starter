@@ -1,4 +1,4 @@
-> :bulb: See [CONFIGURE_TEMPLATE.md](./CONFIGURE_TEMPLATE) to configure this template. Then, remove the file and this advise.
+> :bulb: See [CONFIGURE_TEMPLATE.md](https://gist.github.com/rjlopezdev/f2c2ab0db522aad87c98fb1dc2e4ef14) to configure this template. Then, remove the file and this advise.
 
 <p align="center">
   <img src="https://d33wubrfki0l68.cloudfront.net/49c2be6f2607b5c12dd27f8ecc8521723447975d/f05c5/logo-small.cbbeba89.svg" alt="Nest Library Starter" width="200" height="200">
