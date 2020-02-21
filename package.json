@@ -19,7 +19,7 @@
     "build": "npm run build:lib && npm run build:schematics && ./tools/package.sh",
     "build:lib": "npx tsc -p tsconfig.json",
     "build:schematics": "npx tsc -p tsconfig.schematics.json",
-    "build:docs": "npx compodoc -p tsconfig.json",
+    "build:docs": "npx compodoc -p tsconfig.json && node tools/emoji-replacer.js",
     "lint": "npm run lint:lib && npm run lint:schematics",
     "lint:lib": "npx eslint 'src/**'",
     "lint:schematics": "npx eslint 'schematics/**'",
@@ -59,7 +59,9 @@
     "eslint": "^6.8.0",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
+    "node-emoji": "^1.10.0",
     "prettier": "^1.19.1",
+    "replace-in-file": "^5.0.2",
     "semantic-release": "^17.0.4",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
