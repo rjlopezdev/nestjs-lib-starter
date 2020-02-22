@@ -3,11 +3,5 @@
   "id": "SchematicsAdd",
   "title": "Add Schema",
   "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "minLength": 1,
-      "default": "demo"
-    }
-  }
+  "properties": {}
 }
