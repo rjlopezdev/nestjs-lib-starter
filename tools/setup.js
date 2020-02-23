@@ -191,8 +191,7 @@ async function setup() {
         : REPLACEMENT_RULES[replacementRule].defaultOrigin;
       const to = transformationRule.to(cliInput);
 
-      replaceStrings(from, to, cliInput, dryRun);
-      renameFile(transformationRule, cliInput, dryRun);
+      replaceStrings(from, to,cliInput, transformationRule,  dryRun);
     }
   }
 
@@ -201,7 +200,7 @@ async function setup() {
   console.log('Done! ✅  Be a good cat! 😼');
 }
 
-function replaceStrings(from, to, cliInput, dryRun) {
+function replaceStrings(from, to, cliInput, transformationRule, dryRun) {
   replace.sync(REPLACEMENT_OPTIONS(from, to, dryRun));
   console.log(`🔡  ${from} => ${to} ✅`);
   renameFile(transformationRule, cliInput, dryRun);
@@ -213,7 +212,7 @@ function renameFile(transformationRule, cliInput, dryRun) {
     const toFile = transformationRule.file.to(cliInput);
     if (dryRun) {
       console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
-      continue;
+      return;
     }
     console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
     fs.renameSync(fromFile, toFile);
