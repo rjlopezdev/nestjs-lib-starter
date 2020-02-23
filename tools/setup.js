@@ -1,20 +1,123 @@
+
 /**
  * 🔥🔥🔥 : you can remove this file after setup :)
- * 💡Tip: if you setup wrongly, just discard git commit & re-run setup :)
+ * 💡Tip: if you setup wrongly, just discard git changes & re-run setup :)
  */
+
+/**
+ * Utility functions
+ */
+const camelize = (str => str
+  .replace(/([A-Z])([A-Z])/g, '$1-$2')
+  .replace(/([a-z])([A-Z])/g, '$1-$2')
+  .replace(/[\s_]+/g, '-')            
+  .toLowerCase()
+);
 
 const inquirer = require('inquirer');
 const replace = require('replace-in-file');
+const fs = require('fs');
 
-const replacementRules = {
-  LIBRARY_NAME: 'Nest Library Starter' ,
-  REPOSITORY_NAME: 'nestjs-library-starter' ,
-  NPMJS_NAMESPACE: 'nestjs-library-starter' ,
-  MAINTAINER_EMAIL: 'rjlopezdev@mail.com' ,
-  MAINTAINER_NAME: 'rjlopezdev' ,
-  MODULE_NAME: 'LibraryNameModule' ,
-  SERVICE_NAME: 'LibraryNameService',
+const REPLACEMENT_OPTIONS = (from, to, dryRun) => ({
+  files: [
+    '*',
+    'schematics/**/*',
+    'src/**/*'
+  ],
+  from: new RegExp(from, 'g'),
+  to: to,
+  dry: dryRun
+});
+
+const REPLACEMENT_RULES = {
+  LIBRARY_NAME: {
+    defaultOrigin: 'Nest Library Starter',
+    transformationRules: [
+      {
+        to: (target) => target,
+      }
+    ]
+  },
+  REPOSITORY_NAME: {
+    defaultOrigin: 'nestjs-lib-starter',
+    transformationRules: [
+      {
+        to: (target) => target,
+      }
+    ]
+  },
+  NPMJS_NAMESPACE: {
+    defaultOrigin: 'nestjs-library-starter',
+    transformationRules: [
+      {
+        to: (target) => target,
+      }
+    ]
+  },
+  MAINTAINER_EMAIL: {
+    defaultOrigin: 'rjlopezdev@mail.com',
+    transformationRules: [
+      {
+        to: (target) => target,
+      }
+    ]
+  },
+  MAINTAINER_NAME: {
+    defaultOrigin: 'rjlopezdev',
+    transformationRules: [
+      {
+        to: (target) => target,
+      }
+    ]
+  },
+  MODULE_NAME: {
+    defaultOrigin: 'LibraryName',
+    transformationRules: [
+      {
+        from: (target) => `${target}Module`,
+        to: (target) => `${target}Module`,
+      },
+      {
+        from: (target) => `${camelize(target)}.module`,
+        to: (target) => `${camelize(target)}.module`,
+        file: {
+          from: 'src/module/library-name.module.ts',
+          to: (target) => `src/module/${camelize(target)}.module.ts`,
+        }
+      }
+    ]
+  },
+  SERVICE_NAME: {
+    defaultOrigin: 'LibraryName',
+    transformationRules: [
+      {
+        from: (target) => `${target}Service`,
+        to: (target) => `${target}Service`,
+      },
+      {
+        from: (target) => `${camelize(target)}.service`,
+        to: (target) => `${camelize(target)}.service`,
+        file: {
+          from: 'src/module/library-name.service.ts',
+          to: (target) => `src/module/${camelize(target)}.service.ts`,
+        }
+      }
+    ]
+  },
+  NPM_VERSION: {
+    defaultOrigin: /"version": "1.*.*"/g,
+    transformationRules: [
+      {
+        to: (target) => `"version": "1.0.0"`
+      }
+    ]
+  }
 };
+
+const FILES_TO_REMOVE = [
+  'CHANGELOG.md',
+  'package-lock.json'
+]
 
 const questions = [
   {
@@ -26,14 +129,14 @@ const questions = [
   {
     type: 'input',
     name: 'MAINTAINER_NAME',
-    default: 'awesome-cat',
+    default: 'awesome-cat-developer',
     message: 'Maintainer (github account name):'
   },
   {
     type: 'input',
     name: 'MAINTAINER_EMAIL',
-    default: (answers) => `${answers['MAINTAINER_NAME']}@gmail.com`,
-    message: 'Npmjs namespace to publish:'
+    default: (answers) => `${answers.MAINTAINER_NAME}@gmail.com`,
+    message: 'Maintainer email:'
   },
   {
     type: 'input',
@@ -44,7 +147,7 @@ const questions = [
   {
     type: 'input',
     name: 'NPMJS_NAMESPACE',
-    default: (answers) => `${answers['REPOSITORY_NAME']}`,
+    default: (answers) => `${answers.REPOSITORY_NAME}`,
     message: 'Npmjs namespace to publish:'
   },
   {
@@ -56,42 +159,50 @@ const questions = [
   {
     type: 'input',
     name: 'SERVICE_NAME',
-    default: (answers) => `${answers['MODULE_NAME']}`,
+    default: (answers) => `${answers.MODULE_NAME}`,
     message: 'Name of the service (PascalCase):'
   }
 ];
 
-const options = (from, to, dryRun) => ({
-  files: '/*',
-  from: new RegExp(from, 'g'),
-  to: to,
-  dry: dryRun
-});
+async function setup() {
+  const answers = await inquirer.prompt(questions);
 
-inquirer
-.prompt(questions)
-.then(answers => {
+  console.log('\n🎛  Setting your project...');
 
-  console.log('🎛  Setting your project...'); 
+  console.log(`\n🔡👷 Applying string transformation rules...\n`);
 
-  console.log(process.argv.includes('--dryRun') ? true : false);
+  for (const replacementRule in REPLACEMENT_RULES) {
+    for (const transformationRule of REPLACEMENT_RULES[replacementRule].transformationRules) {
 
-  for (const replaceRule in replacementRules) {
-    console.log(`${replacementRules[replaceRule]} => ${answers[replaceRule]}`);
-    replace.sync(
-      options(
-        replacementRules[replaceRule],
-        answers[replaceRule],
-        process.argv.includes('--dryRun') ? true : false
-      )
-    );
+      const from = transformationRule.from
+        ? transformationRule.from(REPLACEMENT_RULES[replacementRule].defaultOrigin)
+        : REPLACEMENT_RULES[replacementRule].defaultOrigin;
+      const to = transformationRule.to(answers[replacementRule]);
+      const dryRun = process.argv.includes('--dryRun');
+
+      replace.sync(REPLACEMENT_OPTIONS(from, to, dryRun));
+      console.log(`🔡  ${from} => ${to} ✅`);
+
+      if (transformationRule.file) {
+        const fromFile = transformationRule.file.from;
+        const toFile = transformationRule.file.to(answers[replacementRule]);
+        if (dryRun) {
+          console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
+          continue;
+        }
+        console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
+        fs.renameSync(fromFile, toFile);
+      }
+    }
   }
 
-  console.log('Done! ✅ Happy codding! 😎');
-});
+  console.log(`\n🗑👷  Removing unnecessary files...\n`);
+  for (const file of FILES_TO_REMOVE) {
+    console.log(`\n🗑  Removed ${file}`);
+    fs.unlinkSync(file);
+  }
 
-/**
- * Removals after setup:
- * 1. commander
- * 2. remove setup script `scripts > setup`
- */
+  console.log('Done! ✅  Be a good cat! 😼');
+}
+
+setup();
