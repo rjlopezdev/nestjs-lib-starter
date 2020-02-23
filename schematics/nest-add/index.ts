@@ -13,6 +13,7 @@ export function nestAdd(_options: NestAddOptions): Rule {
     _options.name = 'LibraryName'
 
     const moduleFinder: ModuleFinder = new ModuleFinder(tree);
+    // @ts-ignore
     _options.module = moduleFinder.find({
       name: 'AppModule',
       path: path.join(process.env.PATH, 'src/app.module.ts')
@@ -22,9 +23,11 @@ export function nestAdd(_options: NestAddOptions): Rule {
       return tree;
     }
 
+    // @ts-ignore
     const content = tree.read(_options.module).toString();
     const moduleDeclarator: ModuleDeclarator = new ModuleDeclarator();
 
+    // @ts-ignore
     tree.overwrite(_options.module, moduleDeclarator.declare(content, _options));
     return tree;
   };
