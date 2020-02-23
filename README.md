@@ -10,7 +10,7 @@
   Minimal library description.
   <br>
   <br>
-  <img src="https://github.com/rjlopezdev/nestjs-lib-starter/workflows/Build%20Library%20and%20Schematics/badge.svg">
+  <img src="https://github.com/rjlopezdev/nestjs-lib-starter/workflows/Release/badge.svg">
   <img src="https://codecov.io/gh/rjlopezdev/nestjs-lib-starter/branch/master/graph/badge.svg" />
   <br>
   <br>

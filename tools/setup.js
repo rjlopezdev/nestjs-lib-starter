@@ -173,38 +173,54 @@ const questions = [
 ];
 
 async function setup() {
+
   const answers = await inquirer.prompt(questions);
 
   console.log('\n🎛  Setting your project...');
 
-  console.log(`\n🔡👷 Applying string transformation rules...\n`);
+  console.log(`\n🔡👷 Applying transformation rules...\n`);
 
   const dryRun = process.argv.includes('--dryRun');
 
   for (const replacementRule in REPLACEMENT_RULES) {
     for (const transformationRule of REPLACEMENT_RULES[replacementRule].transformationRules) {
 
+      const cliInput = answers[replacementRule];
       const from = transformationRule.from
         ? transformationRule.from(REPLACEMENT_RULES[replacementRule].defaultOrigin)
         : REPLACEMENT_RULES[replacementRule].defaultOrigin;
-      const to = transformationRule.to(answers[replacementRule]);
+      const to = transformationRule.to(cliInput);
 
-      replace.sync(REPLACEMENT_OPTIONS(from, to, dryRun));
-      console.log(`🔡  ${from} => ${to} ✅`);
-
-      if (transformationRule.file) {
-        const fromFile = transformationRule.file.from;
-        const toFile = transformationRule.file.to(answers[replacementRule]);
-        if (dryRun) {
-          console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
-          continue;
-        }
-        console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
-        fs.renameSync(fromFile, toFile);
-      }
+      replaceStrings(from, to, cliInput, dryRun);
+      renameFile(transformationRule, cliInput, dryRun);
     }
   }
 
+  removeFiles(dryRun);
+
+  console.log('Done! ✅  Be a good cat! 😼');
+}
+
+function replaceStrings(from, to, cliInput, dryRun) {
+  replace.sync(REPLACEMENT_OPTIONS(from, to, dryRun));
+  console.log(`🔡  ${from} => ${to} ✅`);
+  renameFile(transformationRule, cliInput, dryRun);
+}
+
+function renameFile(transformationRule, cliInput, dryRun) {
+  if (transformationRule.file) {
+    const fromFile = transformationRule.file.from;
+    const toFile = transformationRule.file.to(cliInput);
+    if (dryRun) {
+      console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
+      continue;
+    }
+    console.log(`\n📃  Renaming file ${fromFile} => ${toFile}\n`);
+    fs.renameSync(fromFile, toFile);
+  }
+}
+
+function removeFiles(dryRun) {
   console.log(`\n🗑👷  Removing unnecessary files...\n`);
   for (const file of FILES_TO_REMOVE) {
     if (dryRun) {
@@ -214,8 +230,6 @@ async function setup() {
     fs.unlinkSync(file);
     console.log(`\n🗑  Removed ${file}`);
   }
-
-  console.log('Done! ✅  Be a good cat! 😼');
 }
 
 setup();
