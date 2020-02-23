@@ -84,6 +84,10 @@ const REPLACEMENT_RULES = {
           from: 'src/module/library-name.module.ts',
           to: (target) => `src/module/${camelize(target)}.module.ts`,
         }
+      },
+      {
+        from: (target) => `${target}Config`,
+        to: (target) => `${target}Config`,
       }
     ]
   },
@@ -93,6 +97,10 @@ const REPLACEMENT_RULES = {
       {
         from: (target) => `${target}Service`,
         to: (target) => `${target}Service`,
+      },
+      {
+        from: (target) => 'librarynameservice',
+        to: (target) => `${target.toLowerCase()}service`
       },
       {
         from: (target) => `${camelize(target)}.service`,
@@ -171,6 +179,8 @@ async function setup() {
 
   console.log(`\n🔡👷 Applying string transformation rules...\n`);
 
+  const dryRun = process.argv.includes('--dryRun');
+
   for (const replacementRule in REPLACEMENT_RULES) {
     for (const transformationRule of REPLACEMENT_RULES[replacementRule].transformationRules) {
 
@@ -178,7 +188,6 @@ async function setup() {
         ? transformationRule.from(REPLACEMENT_RULES[replacementRule].defaultOrigin)
         : REPLACEMENT_RULES[replacementRule].defaultOrigin;
       const to = transformationRule.to(answers[replacementRule]);
-      const dryRun = process.argv.includes('--dryRun');
 
       replace.sync(REPLACEMENT_OPTIONS(from, to, dryRun));
       console.log(`🔡  ${from} => ${to} ✅`);
@@ -198,8 +207,12 @@ async function setup() {
 
   console.log(`\n🗑👷  Removing unnecessary files...\n`);
   for (const file of FILES_TO_REMOVE) {
-    console.log(`\n🗑  Removed ${file}`);
+    if (dryRun) {
+      console.log(`\n🗑  Removed ${file}`);
+      continue;
+    }
     fs.unlinkSync(file);
+    console.log(`\n🗑  Removed ${file}`);
   }
 
   console.log('Done! ✅  Be a good cat! 😼');
