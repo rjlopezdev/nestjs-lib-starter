@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.5...v1.12.0) (2020-02-24)
+
+
+### Features
+
+* add `nest-add` boilerplate ([ba2646a](https://github.com/rjlopezdev/nestjs-lib-starter/commit/ba2646acfd48e08f95cfdd1810ccbe8b47090a66))
+
 ## [1.11.5](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.4...v1.11.5) (2020-02-24)
 
 
