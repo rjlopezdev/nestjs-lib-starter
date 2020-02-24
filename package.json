@@ -25,7 +25,8 @@
     "lint:schematics": "npx eslint 'schematics/**'",
     "test": "jest",
     "semantic-release": "semantic-release",
-    "serve:docs": "npx compodoc -p tsconfig.json --serve"
+    "serve:docs": "npx compodoc -p tsconfig.json --serve",
+    "postpublish": "cp -r dist/package.json . && cp -r dist/package-lock.json ."
   },
   "husky": {
     "hooks": {
