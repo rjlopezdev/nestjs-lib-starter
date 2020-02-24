@@ -9,6 +9,12 @@
         }
     ],
     [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "dist"
+      }
+    ],
+    [
       "@semantic-release/git",
         {
           "assets": [
@@ -17,12 +23,6 @@
             "package-lock.json"
           ]
         }
-    ],
-    [
-      "@semantic-release/npm",
-      {
-        "pkgRoot": "dist"
-      }
     ]
   ]
 }
