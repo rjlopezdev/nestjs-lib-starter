@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.2...v1.11.3) (2020-02-24)
+
+
+### Bug Fixes
+
+* add `package-lock.json` to package tool ([fd65898](https://github.com/rjlopezdev/nestjs-lib-starter/commit/fd658983ed2bd08888b1d5c10415261e155689c4))
+
 ## [1.11.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.1...v1.11.2) (2020-02-24)
 
 
