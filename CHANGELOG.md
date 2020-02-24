@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.10.1...v1.11.0) (2020-02-24)
+
+
+### Bug Fixes
+
+* update LICENSE & ci improvements ([f1157f0](https://github.com/rjlopezdev/nestjs-lib-starter/commit/f1157f0af3dd33eb27336a4494249105141e8577))
+
+
+### Features
+
+* add declaration import on `nest-add` Schematic ([f962b29](https://github.com/rjlopezdev/nestjs-lib-starter/commit/f962b2947405ad89369187a04ff6d6c1926bf82e))
+
 ## [1.10.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.10.0...v1.10.1) (2020-02-23)
 
 
