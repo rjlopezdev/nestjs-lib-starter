@@ -1,3 +1,10 @@
+## [1.11.5](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.4...v1.11.5) (2020-02-24)
+
+
+### Bug Fixes
+
+* use `postversion` instead of `postpublish` ([c1af9b4](https://github.com/rjlopezdev/nestjs-lib-starter/commit/c1af9b496cc97584f74cc9d7c067ca9c23c7eeb3))
+
 ## [1.11.4](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.3...v1.11.4) (2020-02-24)
 
 
