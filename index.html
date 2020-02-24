@@ -1,0 +1,232 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>nestjs-library-starter documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	      <link rel="stylesheet" href="./styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="./" class="navbar-brand">nestjs-library-starter documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content getting-started">
+                   <div class="content-data">
+
+<blockquote>
+<p>💡 See <a href="https://gist.github.com/rjlopezdev/f2c2ab0db522aad87c98fb1dc2e4ef14">CONFIGURE_TEMPLATE.md</a> to configure this template. Then, remove the file and this advise.</p>
+</blockquote>
+<p align="center">
+  <img src="https://d33wubrfki0l68.cloudfront.net/49c2be6f2607b5c12dd27f8ecc8521723447975d/f05c5/logo-small.cbbeba89.svg" alt="Nest Library Starter" width="200" height="200">
+</p>
+
+<h1 align="center"> Nest Library Starter </h1>
+
+<p align="center">
+  Minimal library description.
+  <br>
+  <br>
+  <img src="https://github.com/rjlopezdev/nestjs-lib-starter/workflows/Build%20Library%20and%20Schematics/badge.svg">
+  <img src="https://codecov.io/gh/rjlopezdev/nestjs-lib-starter/branch/master/graph/badge.svg" />
+  <br>
+  <br>
+  <img src="https://badge.fury.io/js/nestjs-library-starter.svg">
+  <img src="https://img.shields.io/badge/maintainer-rjlopezdev-orange.svg?link=https://github.com/rjlopezdev">
+  <img src="https://img.shields.io/badge/license-MIT-green.svg">
+  <br>
+  <img src="https://img.shields.io/badge/nest%20add-compatible-green.svg">
+  <img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg">
+  <br>
+  <br>
+  <a href="CONTRIBUTING.md"> Contributing </a>
+  ·
+  <a href="LICENSE"> License </a>
+</p>
+
+<blockquote>
+<p>📚 <a href="https://rjlopezdev.github.io/nestjs-lib-starter/">See complete documentation</a></p>
+</blockquote>
+<p>An exhaustive description of the library.</p>
+<h1 id="notebook-summary">📓 Summary</h1>
+<ul>
+<li><a href="#installation">Installation</a></li>
+<li><a href="#setup">Setup</a></li>
+<li><a href="#usage">Usage</a><ul>
+<li><a href="#librarynameservice">LibraryNameService</a></li>
+</ul>
+</li>
+<li><a href="#schematics">Schematics</a></li>
+</ul>
+<h1 id="package-installation">📦 Installation</h1>
+<ul>
+<li><p>🐈 Using Nest CLI:</p>
+<div><pre class="line-numbers"><code class="language-none">nest add nestjs-library-starter</code></pre></div></li>
+<li><p>📦 Using Package Manager: </p>
+<div><pre class="line-numbers"><code class="language-none">npm install --save nestjs-library-starter</code></pre></div></li>
+</ul>
+<h1 id="wrench-setup">🔧 Setup</h1>
+<p>Explain your library setup.</p>
+<div><pre class="line-numbers"><code class="language-typescript">import { Module } from &#39;&#64;nestjs/common&#39;;
+import { LibraryNameModule, LibraryNameConfig } from &#39;nestjs-library-starter&#39;;
+
+const CONFIG: LibraryNameConfig = {
+  value: &#39;Awesome!&#39;
+}
+
+&#64;Module({
+  imports: [
+    ...
+    LibraryNameModule.register(CONFIG)
+  ],
+  controllers: [ ... ],
+  providers: [ ... ],
+})
+export class AppModule {}</code></pre></div><h2 id="control_knobs-config">:control_knobs: Config</h2>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Value</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td><strong>string</strong></td>
+<td><code>&lt;DEFAULT&gt;</code></td>
+<td>A powerful value</td>
+</tr>
+</tbody>
+</table>
+<h1 id="books-usage">📚 Usage</h1>
+<p>Explain your library usage.</p>
+<h2 id="librarynameservice">LibraryNameService</h2>
+<p>A service with an awesome &amp; helpul functionallity.</p>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Method</th>
+<th>Signature</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>printConfig</td>
+<td><strong>config</strong>: <code>LibraryNameConfig</code></td>
+<td>Prints a provided <em>configuration</em></td>
+</tr>
+</tbody>
+</table>
+<h1 id="art-schematics">🎨 Schematics</h1>
+<p>Invoke Schematics using:</p>
+<div><pre class="line-numbers"><code class="language-none">nest g &lt;schematic&gt; [params] --collection nestjs-library-starter</code></pre></div><h2 id="demo">demo</h2>
+<blockquote>
+<p>Prints a cute cat.</p>
+</blockquote>
+<table class="table table-bordered compodoc-table">
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>catType</strong></td>
+<td><em>string</em></td>
+<td>Default</td>
+<td>Type of cat to print.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'getting-started';
+            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="./js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="./js/menu-wc.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
