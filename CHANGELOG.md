@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.3...v1.11.4) (2020-02-24)
+
+
+### Bug Fixes
+
+* git after npm ([b3dabad](https://github.com/rjlopezdev/nestjs-lib-starter/commit/b3dabad0e5a56a567ad193caa80024b9a04d6825))
+
 ## [1.11.3](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.2...v1.11.3) (2020-02-24)
 
 
