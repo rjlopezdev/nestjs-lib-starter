@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.0...v1.11.1) (2020-02-24)
+
+
+### Bug Fixes
+
+* add missing `postpublish` task ([fd49aa4](https://github.com/rjlopezdev/nestjs-lib-starter/commit/fd49aa4a6d42cd4116e8abab16e2c3c44bf140e9))
+
 # [1.11.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.10.1...v1.11.0) (2020-02-24)
 
 
