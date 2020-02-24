@@ -1,34 +1,75 @@
-import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
-import { NodePackageInstallTask } from '@angular-devkit/schematics/tasks';
+import {
+  Rule,
+  SchematicContext,
+  Tree,
+  branchAndMerge,
+  chain,
+  apply,
+  url,
+  move,
+  noop,
+  template,
+  mergeWith
+} from '@angular-devkit/schematics';
 import { NestAddOptions } from './schema';
-import { ModuleDeclarator, ModuleFinder } from '@nestjs/schematics';
-const path = require('path');
+import { ModuleDeclarator, ModuleFinder, mergeSourceRoot } from '@nestjs/schematics';
+import { Path, join } from '@angular-devkit/core';
 
-export function nestAdd(_options: NestAddOptions): Rule {
-  return (tree: Tree, _context: SchematicContext) => {
-
-    _context.addTask(new NodePackageInstallTask());
+export function nestAdd(options: NestAddOptions): Rule {
+  return (tree: Tree, context: SchematicContext) => {
     console.warn(`Nest Library Starter installed successfully via cli  ✅`);
+    return branchAndMerge(
+      chain([
+        //@ts-ignore
+        mergeSourceRoot(options),
+        mergeWith(generate(options)),
+        addDeclarationToModule(options),
+      ]),
+    )(tree, context);
+  };
+}
 
-    _options.name = 'LibraryName'
+function addDeclarationToModule(options: NestAddOptions): Rule {
+  return (tree: Tree) => {
 
+    // Name of the module to add
+    options.name = 'library-name';
+
+    // [Search] Module to add to [imports|declarations|exports|providers] LibraryNameModule
     const moduleFinder: ModuleFinder = new ModuleFinder(tree);
-    // @ts-ignore
-    _options.module = moduleFinder.find({
-      name: 'AppModule',
-      path: path.join(process.env.PATH, 'src/app.module.ts')
+    options.metadata = 'imports';
+    options.staticOptions = {
+      name: 'register',
+      value: {
+        value: '<DEFAULT>'
+      }
+    };
+    options.module = moduleFinder.find({
+      name: options.module || 'app',
+      path: options.path as Path
     });
 
-    if (!_options.module) {
+    if (!options.module) {
       return tree;
     }
 
-    // @ts-ignore
-    const content = tree.read(_options.module).toString();
+    // [Write] Commit previous configurations to Tree
+    const content = tree.read(options.module).toString();
     const moduleDeclarator: ModuleDeclarator = new ModuleDeclarator();
 
-    // @ts-ignore
-    tree.overwrite(_options.module, moduleDeclarator.declare(content, _options));
+    tree.overwrite(options.module, moduleDeclarator.declare(content, options));
     return tree;
-  };
+  }
+}
+
+/**
+ * Template files rendering
+ */
+function generate(options: NestAddOptions) {
+  return (context: SchematicContext) =>
+    apply(url(join('./files' as Path, options.language)), [
+      noop(),
+      template({}),
+      move(options.path),
+    ])(context);
 }

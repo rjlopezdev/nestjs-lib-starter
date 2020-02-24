@@ -3,5 +3,23 @@
   "id": "SchematicsAdd",
   "title": "Add Schema",
   "type": "object",
-  "properties": {}
+  "properties": {
+    "path": {
+      "type": "string",
+      "format": "path",
+      "description": "The path to create the controller."
+    },
+    "sourceRoot": {
+      "type": "string",
+      "description": "Nest controller source root directory."
+    },
+    "module": {
+      "type": "string",
+      "description": "Allows specification of the declaring module."
+    },
+    "staticOptions": {
+      "type": "string",
+      "description": "Foo"
+    }
+  }
 }

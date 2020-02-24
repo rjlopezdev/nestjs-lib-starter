@@ -78,6 +78,10 @@ const REPLACEMENT_RULES = {
         to: (target) => `${target}Module`,
       },
       {
+        from: 'library-name',
+        to: (target) => `${target}Module`
+      },
+      {
         from: (target) => `${camelize(target)}.module`,
         to: (target) => `${camelize(target)}.module`,
         file: {
@@ -99,7 +103,7 @@ const REPLACEMENT_RULES = {
         to: (target) => `${target}Service`,
       },
       {
-        from: (target) => 'librarynameservice',
+        from: () => 'librarynameservice',
         to: (target) => `${target.toLowerCase()}service`
       },
       {
@@ -116,7 +120,7 @@ const REPLACEMENT_RULES = {
     defaultOrigin: /"version": "1.*.*"/g,
     transformationRules: [
       {
-        to: (target) => `"version": "1.0.0"`
+        to: () => `"version": "1.0.0"`
       }
     ]
   }
