@@ -23,6 +23,7 @@ echo '🔹  <Template> files copied ✅'
 # Files to copy to dist folder
 files_to_copy=(
   package.json
+  package-lock.json
   README.md
   LICENSE
   CONTRIBUTING.md
