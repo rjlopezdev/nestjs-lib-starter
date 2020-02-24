@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.1...v1.11.2) (2020-02-24)
+
+
+### Bug Fixes
+
+* pass ci if codecov fails ([f8b8e19](https://github.com/rjlopezdev/nestjs-lib-starter/commit/f8b8e190eb2627042ff854feb91d103dd71c5e76))
+
 ## [1.11.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.11.0...v1.11.1) (2020-02-24)
 
 
