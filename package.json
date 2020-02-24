@@ -26,7 +26,7 @@
     "test": "jest",
     "semantic-release": "semantic-release",
     "serve:docs": "npx compodoc -p tsconfig.json --serve",
-    "postpublish": "cp package.json ../package.json && cp package-lock.json ../package-lock.json"
+    "postversion": "cp package.json ../package.json && cp package-lock.json ../package-lock.json"
   },
   "husky": {
     "hooks": {
