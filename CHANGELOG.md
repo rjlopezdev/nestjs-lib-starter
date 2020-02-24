@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.10.0...v1.10.1) (2020-02-23)
+
+
+### Bug Fixes
+
+* incorrect function call ([dff9a19](https://github.com/rjlopezdev/nestjs-lib-starter/commit/dff9a198a000dab67383ab1fcaf591fd8e7ee77a))
+
 # [1.10.0](https://github.com/rjlopezdev/nestjs-lib-starter/compare/v1.9.1...v1.10.0) (2020-02-23)
 
 
