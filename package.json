@@ -64,7 +64,7 @@
     "node-emoji": "^1.10.0",
     "prettier": "^1.19.1",
     "replace-in-file": "^5.0.2",
-    "semantic-release": "^17.0.4",
+    "semantic-release": "^19.0.3",
     "ts-jest": "^25.2.0",
     "typescript": "^3.7.5"
   },
